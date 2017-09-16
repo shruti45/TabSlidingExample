@@ -1,0 +1,160 @@
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:minHeight="?attr/actionBarSize"
+
+                app:expandedTitleMarginEnd="@dimen/expanded_title_end"
+                app:expandedTitleMarginStart="@dimen/expanded_title_start"
+                app:contentScrim="?attr/colorAccent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    app:layout_collapseMode="parallax"/>
+               <!-- <ImageView
+                    android:id="@+id/backdrop"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/color"
+                    app:layout_collapseMode="parallax"/>-->
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:layout_collapseMode="pin">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardPersonal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/colorGrey"
+                    android:layout_margin="8dp">
+                    <EditText
+                        android:id="@+id/editTextName"
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:inputType="text"
+                        android:background="@android:color/transparent"
+                        android:hint="Google Play"
+                        android:layout_marginLeft="35dp"
+                        android:cursorVisible="false"
+                        android:textColorHint="@drawable/selector"
+                        android:focusableInTouchMode="true"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/hamburgerimg"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/hambergericon"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_alignParentLeft="true"
+                            />
+
+                        <ImageView
+                            android:id="@+id/voiceicon"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/voiceicon"
+                            android:layout_marginTop="10dp"
+                            android:layout_alignParentRight="true"
+                            />
+
+
+                        <!--<EditText
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:background="@null"
+                         android:padding="10dp"
+                         android:textColor="#333333" />-->
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+
+                <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cardlist_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="5dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="vertical"
+                    card_view:cardCornerRadius="4dp"
+                    card_view:cardElevation="@dimen/cardview_default_elevation">
+
+                </android.support.v7.widget.CardView>
+
+</android.support.v7.widget.Toolbar>
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tablayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorAccent"
+                app:tabGravity="fill"
+                app:tabBackground="@drawable/tab_color_selector"
+                app:tabTextColor="@color/colorWhite"
+                app:tabSelectedTextColor="@color/colorWhite"
+                app:tabIndicatorColor="@color/colorWhite"/>
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer"/>
+</android.support.v4.widget.DrawerLayout>

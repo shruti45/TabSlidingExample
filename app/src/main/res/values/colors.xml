@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#00A600</color>
+    <color name="colorAccent">#00A600</color>
+    <color name="colorTabScroll">#006000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGrey">#d3d3d3</color>
+    <color name="colorblue">#3F51B5</color>
+    <color name="colordarlblue">#254CD5</color>
+    <color name="colorred">#C4150C</color>
+
+</resources>
